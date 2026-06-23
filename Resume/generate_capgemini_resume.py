@@ -1,7 +1,7 @@
 """
 Resume Generator - Navneet Vishwakarma
 Tailored for: Capgemini DevOps Engineer (Job ID: 461808-en_GB)
-Generates a single-page, ATS-optimized .docx resume.
+100% honest content — no fabricated skills or inflated numbers.
 """
 
 import os
@@ -14,13 +14,11 @@ from docx.oxml import parse_xml
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "Navneet_Vishwakarma_DevOps_Capgemini.docx")
 
-# ── Color Palette ──────────────────────────────────────────────
 DARK = RGBColor(0x1A, 0x1A, 0x2E)
 ACCENT = RGBColor(0x16, 0x53, 0x8D)
 TEXT = RGBColor(0x2D, 0x2D, 0x2D)
 MUTED = RGBColor(0x55, 0x55, 0x55)
 RULE_COLOR = "165390"
-
 FONT_HEADING = "Calibri"
 FONT_BODY = "Calibri"
 
@@ -84,7 +82,6 @@ def add_bullet(doc, text, indent=Inches(0.25)):
 def build_resume():
     doc = Document()
 
-    # ── Page Setup (A4) ───────────────────────────────────────
     section = doc.sections[0]
     section.page_width = Inches(8.27)
     section.page_height = Inches(11.69)
@@ -115,7 +112,7 @@ def build_resume():
     p_title.paragraph_format.space_after = Pt(2)
     p_title.paragraph_format.line_spacing = Pt(11)
     styled_run(p_title,
-               "DevOps Engineer  |  SRE  |  CI/CD  |  Kubernetes  |  Infrastructure Automation",
+               "Linux Administrator  |  DevOps Engineer  |  CI/CD  |  Ansible  |  Docker",
                size=Pt(8.5), color=MUTED)
 
     p_contact = doc.add_paragraph()
@@ -146,16 +143,14 @@ def build_resume():
     p_sum.paragraph_format.line_spacing = Pt(11)
     styled_run(
         p_sum,
-        "DevOps Engineer with hands-on experience in CI/CD pipeline management, infrastructure "
-        "automation, system reliability, and incident support across Linux-based production "
-        "environments. Proficient in Docker containerization, Kubernetes orchestration, "
-        "Infrastructure as Code (Ansible, Terraform), Bash scripting, and Git-based workflows. "
-        "Skilled in building monitoring and observability dashboards, executing reliability "
-        "practices including health checks and rollout coordination, and troubleshooting platform "
-        "issues to maintain uptime and performance. Experienced in SRE principles, log analysis, "
-        "Root Cause Analysis (RCA), and automating routine operational tasks. Holds a B.Tech in "
-        "Computer Science and seeks a DevOps/SRE role to contribute to platform reliability, "
-        "continuous delivery, and infrastructure operations at scale.",
+        "Linux Administrator and aspiring DevOps Engineer with hands-on experience managing "
+        "Linux servers (SLES, Ubuntu), deploying Docker containers, building CI/CD pipelines "
+        "using GitHub Actions, and automating infrastructure with Ansible and Bash scripting. "
+        "Experienced in server hardening, incident troubleshooting, log analysis, Root Cause "
+        "Analysis (RCA), backup and recovery operations, and maintaining operational documentation. "
+        "Familiar with Kubernetes fundamentals and KVM virtualization. Holds a B.Tech in Computer "
+        "Science and is eager to contribute to platform reliability, continuous delivery, and "
+        "infrastructure automation in a DevOps/SRE environment.",
         size=Pt(8.5)
     )
 
@@ -166,22 +161,23 @@ def build_resume():
 
     skills_data = [
         ("CI/CD & Version Control",
-         "Git, GitHub, GitHub Actions, CI/CD Pipeline Design & Maintenance, Automated Build/Deploy Workflows"),
+         "GitHub Actions (Pipeline Build & Maintenance), Git, GitHub"),
         ("Containers & Orchestration",
-         "Docker (Build, Compose, Registry), Kubernetes (Pods, Deployments, Services, ConfigMaps, Helm)"),
+         "Docker (Build, Compose, Deployment), Kubernetes (Basic: Pods, Deployments, kubectl)"),
         ("Infrastructure as Code",
-         "Ansible (Playbooks, Roles, Handlers), Terraform, Bash Shell Scripting, Cron Automation"),
-        ("Monitoring & Observability",
-         "Prometheus, Grafana Dashboards, Log Analysis (journalctl, /var/log), Alerting, Health Checks"),
+         "Ansible (Playbooks, Roles, Handlers), Bash Shell Scripting, Cron Scheduling"),
         ("Operating Systems",
-         "SUSE Linux Enterprise Server (SLES), Red Hat Enterprise Linux (RHEL), Ubuntu Server, openSUSE"),
-        ("Cloud & Virtualization",
-         "VMware ESXi, KVM, Cloud Infrastructure Operations"),
-        ("SRE & Incident Mgmt",
-         "Incident Support, Root Cause Analysis (RCA), Rollout Coordination, Reliability Automation, "
-         "Uptime & Performance Monitoring, Runbooks/SOPs"),
+         "SUSE Linux Enterprise Server (SLES), Ubuntu Server, openSUSE Leap"),
+        ("Virtualization",
+         "KVM"),
+        ("Linux Administration",
+         "User & Group Mgmt, File Systems, Package Mgmt (zypper, apt), Service Control (systemd), "
+         "SSH Hardening, Firewall (firewalld, UFW), auditd, Log Analysis (journalctl, /var/log)"),
+        ("Incident & Reliability",
+         "Incident Troubleshooting, Root Cause Analysis (RCA), Backup & Recovery, "
+         "Uptime Monitoring, Runbooks/SOPs"),
         ("Networking",
-         "TCP/IP, DNS, DHCP, SSH, HTTP/HTTPS, Firewall (firewalld, UFW), Network Troubleshooting"),
+         "TCP/IP, DNS, DHCP, SSH, HTTP/HTTPS, Network Troubleshooting"),
     ]
 
     for label, value in skills_data:
@@ -202,7 +198,7 @@ def build_resume():
     p_job.paragraph_format.space_before = Pt(2)
     p_job.paragraph_format.space_after = Pt(0)
     p_job.paragraph_format.line_spacing = Pt(12)
-    styled_run(p_job, "Linux System Administrator / DevOps Engineer",
+    styled_run(p_job, "Linux System Administrator",
                size=Pt(9.5), color=DARK, bold=True)
 
     p_co = doc.add_paragraph()
@@ -213,29 +209,30 @@ def build_resume():
     styled_run(p_co, "  |  March 2024 – Present  |  Satna, MP", size=Pt(8.5), color=MUTED)
 
     bullets_exp = [
-        "Maintained and improved CI/CD pipelines using GitHub Actions for automated build, test, "
-        "and deployment workflows across multiple application environments, reducing release cycles by 30%.",
+        "Manage 5 Linux servers (SLES, Ubuntu) across production and staging environments, "
+        "handling server provisioning, updates, and day-to-day infrastructure operations.",
 
-        "Deployed and managed Docker-based containerized application stacks; orchestrated container "
-        "lifecycle, image builds, and multi-service compositions using Docker Compose.",
+        "Built and maintain CI/CD pipelines using GitHub Actions for automated build and "
+        "deployment workflows of web applications.",
 
-        "Supported infrastructure operations across 10+ Linux servers (SLES 15, Ubuntu 22.04) "
-        "focused on uptime and performance, maintaining 99.5% service availability.",
+        "Deploy and manage Docker-based containerized application stacks, handling container "
+        "lifecycle, image builds, and multi-service compositions.",
 
-        "Built monitoring and observability dashboards using Prometheus and Grafana; configured "
-        "alerting rules and health checks to proactively identify incidents before user impact.",
+        "Troubleshoot and resolve production incidents through systematic log analysis "
+        "(journalctl, /var/log/messages) and root cause investigation; resolved 15+ operational "
+        "issues since joining.",
 
-        "Executed reliability practices including health checks, staged rollouts, and incident "
-        "support; resolved 50+ production incidents through systematic log analysis and root cause investigation.",
+        "Automate routine server administration tasks using Ansible playbooks and Bash scripts, "
+        "covering user provisioning, package updates, and configuration management.",
 
-        "Automated routine infrastructure tasks using Ansible playbooks and Bash scripts, "
-        "eliminating 40% of manual operational effort and reducing configuration drift.",
+        "Implement server hardening measures: SSH key-based authentication, firewall rules "
+        "(firewalld/UFW), audit logging (auditd), and service lockdown following security best practices.",
 
-        "Implemented server hardening aligned with CIS/NIST baselines: SSH security, firewall "
-        "rules (firewalld/UFW), audit logging (auditd), and automated patch management.",
+        "Manage backup and recovery operations for application data and server configurations "
+        "to ensure data protection and restoration readiness.",
 
-        "Created and maintained operational documentation including runbooks, SOPs, and incident "
-        "reports to ensure repeatable processes and knowledge transfer across teams.",
+        "Maintain operational documentation including runbooks, SOPs, and incident reports "
+        "for team knowledge sharing and repeatable processes.",
     ]
     for b in bullets_exp:
         add_bullet(doc, b)
@@ -257,12 +254,11 @@ def build_resume():
                size=Pt(7.5), color=ACCENT)
 
     proj1_bullets = [
-        "Built 6 Ansible roles as Infrastructure as Code (IaC) to automate SSH hardening, firewall "
-        "enforcement, audit logging, legacy service removal, and compliance scanning across "
-        "RHEL-family and SUSE targets.",
+        "Wrote 6 Ansible roles to automate SSH hardening, firewall enforcement, audit logging, "
+        "legacy service removal, and compliance scanning across Ubuntu and openSUSE servers.",
 
-        "Implemented reliability automation: standardized server configurations, automated patch "
-        "scheduling, and integrated Lynis auditing framework for continuous compliance verification.",
+        "Applied CIS/NIST-aligned security configurations: PAM password policies, persistent "
+        "journald logging, and automated patch scheduling. Integrated Lynis for compliance verification.",
     ]
     for b in proj1_bullets:
         add_bullet(doc, b)
@@ -279,12 +275,12 @@ def build_resume():
                size=Pt(7.5), color=ACCENT)
 
     proj2_bullets = [
-        "Conducted enterprise-grade Root Cause Analysis on a P1 outage in a 2-node SLES HA cluster "
-        "(Pacemaker/Corosync/SBD), troubleshooting cascading failures across networking, fencing, "
-        "and watchdog layers that triggered a 5x reboot loop over 79 minutes.",
+        "Conducted Root Cause Analysis on a P1 outage in a 2-node SLES HA cluster "
+        "(Pacemaker/Corosync/SBD), troubleshooting cascading failures across networking, "
+        "fencing, and watchdog layers that triggered a 5x reboot loop.",
 
-        "Delivered detailed incident timeline, technical findings, and actionable remediation plan "
-        "covering observability improvements, timeout tuning, and network redundancy recommendations.",
+        "Analyzed supportconfig archives and system logs to reconstruct event timeline; "
+        "delivered incident report with actionable remediation steps.",
     ]
     for b in proj2_bullets:
         add_bullet(doc, b)
@@ -321,7 +317,6 @@ def build_resume():
     styled_run(p_uni, "AKS University, Satna, MP", size=Pt(8.5), color=TEXT, italic=True)
     styled_run(p_uni, "  |  2022 – 2026  |  CGPA: 8.29 / 10", size=Pt(8.5), color=MUTED)
 
-    # ── Save ──────────────────────────────────────────────────
     doc.save(OUTPUT_FILE)
     print(f"Resume saved to: {OUTPUT_FILE}")
 

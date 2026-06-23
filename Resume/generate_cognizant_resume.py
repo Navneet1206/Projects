@@ -1,7 +1,7 @@
 """
 Resume Generator - Navneet Vishwakarma
 Tailored for: Cognizant Linux Administrator (Job ID: 00069402921)
-Generates a single-page, ATS-optimized .docx resume.
+100% honest content — no fabricated skills or inflated numbers.
 """
 
 import os
@@ -14,13 +14,11 @@ from docx.oxml import parse_xml
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "Navneet_Vishwakarma_Linux_Admin_Cognizant.docx")
 
-# ── Color Palette ──────────────────────────────────────────────
 DARK = RGBColor(0x1A, 0x1A, 0x2E)
 ACCENT = RGBColor(0x16, 0x53, 0x8D)
 TEXT = RGBColor(0x2D, 0x2D, 0x2D)
 MUTED = RGBColor(0x55, 0x55, 0x55)
 RULE_COLOR = "165390"
-
 FONT_HEADING = "Calibri"
 FONT_BODY = "Calibri"
 
@@ -84,7 +82,7 @@ def add_bullet(doc, text, indent=Inches(0.25)):
 def build_resume():
     doc = Document()
 
-    # ── Page Setup (US Letter for US-based role) ───────────────
+    # US Letter for US-based role
     section = doc.sections[0]
     section.page_width = Inches(8.5)
     section.page_height = Inches(11)
@@ -115,7 +113,7 @@ def build_resume():
     p_title.paragraph_format.space_after = Pt(2)
     p_title.paragraph_format.line_spacing = Pt(11)
     styled_run(p_title,
-               "Linux Administrator  |  Infrastructure Engineer  |  RHEL / SLES  |  Ansible  |  VMware ESX",
+               "Linux Administrator  |  SLES  |  Ubuntu  |  Ansible  |  Docker  |  Infrastructure Operations",
                size=Pt(8.5), color=MUTED)
 
     p_contact = doc.add_paragraph()
@@ -147,15 +145,14 @@ def build_resume():
     styled_run(
         p_sum,
         "Linux Administrator with hands-on experience managing enterprise Linux environments "
-        "including SUSE Linux Enterprise Server (SLES), Red Hat Enterprise Linux (RHEL), Ubuntu, "
-        "and openSUSE. Skilled in infrastructure architecture, security hardening aligned to "
-        "CIS/NIST/STIG baselines, kernel parameter tuning, capacity planning, and lifecycle "
-        "management across production and staging landscapes. Proficient in system monitoring, "
-        "log analysis, Root Cause Analysis (RCA), incident resolution, and maintaining operational "
-        "runbooks and HLD/LLD documentation. Experienced with Ansible-driven configuration "
-        "management, VMware ESXi/vSphere virtualization, Docker containers, Bash scripting, "
-        "backup and recovery operations, and compliance audits. Seeking a Linux Administrator "
-        "role to contribute to infrastructure reliability, security, and operational excellence.",
+        "including SUSE Linux Enterprise Server (SLES) and Ubuntu. Skilled in server hardening "
+        "aligned to CIS/NIST security baselines, infrastructure operations, incident "
+        "troubleshooting, log analysis, and Root Cause Analysis (RCA). Proficient in Ansible-driven "
+        "configuration management, Docker containerization, Bash scripting, CI/CD pipelines via "
+        "GitHub Actions, KVM virtualization, and backup and recovery operations. Experienced in "
+        "maintaining operational runbooks, SOPs, and incident documentation. Holds a B.Tech in "
+        "Computer Science and seeks a Linux Administrator role to contribute to infrastructure "
+        "reliability, security, and operational excellence.",
         size=Pt(8.5)
     )
 
@@ -166,28 +163,27 @@ def build_resume():
 
     skills_data = [
         ("Operating Systems",
-         "RHEL 7/8/9, SLES 12/15, Ubuntu Server, openSUSE Leap, Windows Server"),
-        ("Virtualization",
-         "VMware ESXi / vSphere, KVM, Docker Containers"),
+         "SUSE Linux Enterprise Server (SLES), Ubuntu Server, openSUSE Leap"),
+        ("Virtualization & Containers",
+         "KVM, Docker (Build, Compose, Deployment)"),
         ("Linux Administration",
-         "User & Group Mgmt, File Systems (ext4, XFS, LVM), Package Mgmt (yum, zypper, apt), "
-         "Process & Service Control (systemd), Kernel Tuning, Capacity Planning"),
+         "User & Group Mgmt, File Systems, Package Mgmt (zypper, apt), Process & Service Control "
+         "(systemd), SSH Hardening, Firewall (firewalld, UFW), auditd"),
         ("Security & Compliance",
-         "CIS/NIST/STIG Hardening, SSH Security, PAM/pwquality, Firewall (firewalld, UFW), "
-         "auditd, Patch Management, Compliance Audits"),
+         "CIS/NIST Hardening, SSH Security, PAM/pwquality, Patch Management, Audit Logging"),
         ("Monitoring & Incident Mgmt",
-         "System Monitoring, Log Analysis (journalctl, /var/log), Root Cause Analysis, "
-         "Incident Resolution, Alerting & Dashboards"),
+         "Log Analysis (journalctl, /var/log), Root Cause Analysis, Incident Resolution, "
+         "System Monitoring"),
         ("Automation & IaC",
-         "Bash Shell Scripting, Ansible (Playbooks, Roles, Handlers), Cron Scheduling"),
+         "Ansible (Playbooks, Roles, Handlers), Bash Shell Scripting, Cron Scheduling"),
+        ("CI/CD & Version Control",
+         "GitHub Actions (Pipeline Build & Maintenance), Git, GitHub"),
         ("Backup & Recovery",
-         "Backup Strategy, Data Restoration, Recovery Point/Time Objectives (RPO/RTO)"),
+         "Backup Operations, Data Restoration, Recovery Planning"),
+        ("Documentation",
+         "Operational Runbooks, SOPs, Incident Reports, Knowledge Transfer"),
         ("Networking",
-         "TCP/IP, DNS, DHCP, SSH, HTTP/HTTPS, NFS, Network Bonding/Bridging"),
-        ("Documentation & Ops",
-         "HLD/LLD, Operational Runbooks, SOPs, Change Management, Knowledge Transfer"),
-        ("Version Control",
-         "Git, GitHub"),
+         "TCP/IP, DNS, DHCP, SSH, HTTP/HTTPS, Network Troubleshooting"),
     ]
 
     for label, value in skills_data:
@@ -218,27 +214,31 @@ def build_resume():
     styled_run(p_co, "  |  March 2024 – Present  |  Satna, MP", size=Pt(8.5), color=MUTED)
 
     bullets_exp = [
-        "Administered 10+ Linux servers (SLES 15 SP4, Ubuntu 22.04) across production and staging "
-        "environments, maintaining 99.5% service availability through proactive monitoring and capacity planning.",
+        "Manage 5 Linux servers (SLES, Ubuntu) across production and staging environments, "
+        "handling server provisioning, system updates, and day-to-day infrastructure operations.",
 
-        "Designed and implemented standardized system configurations for server hardening, kernel parameter "
-        "tuning, and firewall enforcement (firewalld, UFW) aligned with CIS/NIST security baselines.",
+        "Implement server hardening aligned with CIS/NIST baselines: disabled root SSH, enforced "
+        "key-based authentication, configured firewall rules (firewalld/UFW), and enabled audit "
+        "logging via auditd.",
 
-        "Drove incident and problem analysis for infrastructure issues by reviewing system logs "
-        "(journalctl, /var/log/messages, auditd), conducting root cause reviews, and documenting "
-        "corrective actions to prevent recurring disruptions.",
+        "Troubleshoot and resolve production incidents through systematic log analysis "
+        "(journalctl, /var/log/messages) and root cause investigation; resolved 15+ operational "
+        "issues since joining.",
 
-        "Automated server provisioning, patch management, and configuration drift remediation using "
-        "Ansible playbooks and Bash scripts, reducing manual administration effort by 40%.",
+        "Automate routine server administration tasks using Ansible playbooks and Bash scripts "
+        "covering user provisioning, package updates, and configuration management.",
 
-        "Managed user accounts, sudo policies, SSH access controls, and file permissions across "
-        "multi-server infrastructure; supported Docker-based application deployments.",
+        "Deploy and manage Docker-based containerized application stacks, handling container "
+        "lifecycle and multi-service compositions.",
 
-        "Created and maintained infrastructure documentation including operational runbooks, SOPs, and "
-        "incident reports to ensure repeatable processes and smooth knowledge transfer.",
+        "Manage backup and recovery operations for application data and server configurations "
+        "to ensure data protection and restoration readiness.",
 
-        "Coordinated with application teams to define infrastructure requirements and translate "
-        "business needs into practical system designs supporting future growth.",
+        "Manage user accounts, sudo policies, file permissions, and SSH access controls across "
+        "the server infrastructure.",
+
+        "Create and maintain operational documentation including runbooks, SOPs, and incident "
+        "reports for team knowledge sharing and repeatable processes.",
     ]
     for b in bullets_exp:
         add_bullet(doc, b)
@@ -248,30 +248,26 @@ def build_resume():
     # ═══════════════════════════════════════════════════════════
     add_section_heading(doc, "Key Projects")
 
-    # Project 1
     p_p1 = doc.add_paragraph()
     p_p1.paragraph_format.space_before = Pt(2)
     p_p1.paragraph_format.space_after = Pt(1)
     p_p1.paragraph_format.line_spacing = Pt(11)
-    styled_run(p_p1, "Enterprise Linux Server Hardening with Ansible",
+    styled_run(p_p1, "Linux Server Hardening Automation with Ansible",
                size=Pt(9), color=DARK, bold=True)
     styled_run(p_p1, "  |  ", size=Pt(8), color=MUTED)
     styled_run(p_p1, "github.com/Navneet1206/Projects/.../Navneet-Server-Hardning",
                size=Pt(7.5), color=ACCENT)
 
     proj1_bullets = [
-        "Built 6 Ansible roles automating SSH hardening, firewall enforcement, audit logging (auditd), "
-        "legacy service removal, and compliance scanning across RHEL-family and SUSE targets.",
+        "Wrote 6 Ansible roles to automate SSH hardening, firewall enforcement, audit logging, "
+        "legacy service removal, and compliance scanning across Ubuntu and openSUSE servers.",
 
-        "Applied CIS/NIST/STIG-aligned security configurations: PAM password policies, persistent "
-        "journald logging, kernel parameter tuning, and automated patch scheduling.",
-
-        "Integrated Lynis auditing framework for post-hardening compliance verification and audit reporting.",
+        "Applied CIS/NIST-aligned security configurations: PAM password policies, persistent "
+        "journald logging, and automated patch scheduling. Integrated Lynis for compliance verification.",
     ]
     for b in proj1_bullets:
         add_bullet(doc, b)
 
-    # Project 2
     p_p2 = doc.add_paragraph()
     p_p2.paragraph_format.space_before = Pt(3)
     p_p2.paragraph_format.space_after = Pt(1)
@@ -283,16 +279,12 @@ def build_resume():
                size=Pt(7.5), color=ACCENT)
 
     proj2_bullets = [
-        "Conducted enterprise-grade Root Cause Analysis on a P1 outage in a 2-node SLES HA cluster "
-        "(Pacemaker/Corosync/SBD), diagnosing cascading failures across networking, fencing, and "
-        "watchdog layers that triggered a 5x reboot loop over 79 minutes.",
+        "Conducted Root Cause Analysis on a P1 outage in a 2-node SLES HA cluster "
+        "(Pacemaker/Corosync/SBD), troubleshooting cascading failures across networking, "
+        "fencing, and watchdog layers that triggered a 5x reboot loop.",
 
-        "Analyzed supportconfig archives and system logs; correlated corosync token timeouts, ARP "
-        "anomalies, and SBD watchdog configuration mismatches to pinpoint the failure chain.",
-
-        "Delivered detailed incident timeline, technical findings, and actionable remediation plan "
-        "including infrastructure documentation (HLD/LLD), Corosync QDevice, and dual-ring network "
-        "redundancy recommendations.",
+        "Analyzed supportconfig archives and system logs to reconstruct event timeline; "
+        "delivered incident report with actionable remediation steps.",
     ]
     for b in proj2_bullets:
         add_bullet(doc, b)
@@ -329,7 +321,6 @@ def build_resume():
     styled_run(p_uni, "AKS University, Satna, MP", size=Pt(8.5), color=TEXT, italic=True)
     styled_run(p_uni, "  |  2022 – 2026  |  CGPA: 8.29 / 10", size=Pt(8.5), color=MUTED)
 
-    # ── Save ──────────────────────────────────────────────────
     doc.save(OUTPUT_FILE)
     print(f"Resume saved to: {OUTPUT_FILE}")
 
