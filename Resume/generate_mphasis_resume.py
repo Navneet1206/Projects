@@ -1,7 +1,7 @@
 """
 Resume Generator - Navneet Vishwakarma
 Tailored for: Mphasis Trainee Software Engineer - Systems (Job ID: 118377-1-10)
-100% honest content based on user-provided information.
+100% honest content. Aligned to Systems Engineer / Technical Support role.
 """
 
 import os
@@ -82,7 +82,6 @@ def add_bullet(doc, text, indent=Inches(0.25)):
 def build_resume():
     doc = Document()
 
-    # A4 page
     section = doc.sections[0]
     section.page_width = Inches(8.27)
     section.page_height = Inches(11.69)
@@ -113,7 +112,7 @@ def build_resume():
     p_title.paragraph_format.space_after = Pt(3)
     p_title.paragraph_format.line_spacing = Pt(12)
     styled_run(p_title,
-               "Operations Support  |  Process Monitoring  |  Documentation  |  Data Management",
+               "Technical Support  |  System Operations  |  Troubleshooting  |  Documentation",
                size=Pt(8.5), color=MUTED)
 
     p_contact = doc.add_paragraph()
@@ -144,13 +143,13 @@ def build_resume():
     p_sum.paragraph_format.line_spacing = Pt(12)
     styled_run(
         p_sum,
-        "Detail-oriented Computer Science Engineering student with experience in operations "
-        "support, process monitoring, documentation, troubleshooting, and administrative tasks. "
-        "Proficient in Microsoft Excel, Microsoft Office, data management, reporting, and "
-        "maintaining operational records. Strong communication skills with the ability to follow "
-        "standard operating procedures, work in team environments, and support day-to-day "
-        "operational activities. Seeking opportunities as Operator, Technician, Operations "
-        "Associate, or Production Support Executive.",
+        "Computer Science Engineering student with experience in technical support, system "
+        "operations, troubleshooting, documentation, and process management. Proficient in "
+        "Linux environments, Microsoft Office, data analysis, and operational support "
+        "activities. Strong problem-solving, communication, and collaboration skills with the "
+        "ability to learn new technologies quickly and work effectively in team environments. "
+        "Seeking opportunities as a Trainee Software Engineer, Systems Engineer, Technical "
+        "Support Engineer, or Infrastructure Support Engineer.",
         size=Pt(9)
     )
 
@@ -160,14 +159,16 @@ def build_resume():
     add_section_heading(doc, "Technical Skills")
 
     skills_data = [
+        ("Operating Systems",
+         "Linux, Windows"),
         ("Office & Productivity",
          "Microsoft Excel, Microsoft Word, Microsoft PowerPoint"),
-        ("Data & Documentation",
-         "Data Entry, Documentation, Reporting, Record Management"),
-        ("Operations",
-         "Process Monitoring, Administrative Support, Basic Computer Operations"),
+        ("Technical Support",
+         "Troubleshooting, Issue Resolution, Documentation, Process Monitoring"),
+        ("Tools & Technologies",
+         "Git, Basic Shell Scripting, Microsoft Office"),
         ("Soft Skills",
-         "Communication, Team Collaboration, SOP Compliance, Issue Tracking & Resolution"),
+         "Communication, Team Collaboration, Problem Solving, SOP Compliance"),
     ]
 
     for label, value in skills_data:
@@ -240,9 +241,9 @@ def build_resume():
     add_section_heading(doc, "Certifications")
 
     certs = [
-        "Microsoft Office & Excel Fundamentals",
-        "Computer Applications & Documentation Training",
-        "Linux Administration Training – Codenixia",
+        "Linux Administration Training (CX-501) – Codenixia",
+        "Linux Server Hardening & Security Training (CX-701) – Codenixia",
+        "SUSE Linux Enterprise Server (SLES) Administration Training",
     ]
     for c in certs:
         add_bullet(doc, c)
@@ -268,7 +269,6 @@ def build_resume():
     styled_run(p_uni, "  |  2022 – 2026  |  CGPA: 8.29 / 10",
                size=Pt(8.5), color=MUTED)
 
-    # ── Save ──────────────────────────────────────────────────
     doc.save(OUTPUT_FILE)
     print(f"Resume saved to: {OUTPUT_FILE}")
 
