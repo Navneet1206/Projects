@@ -1,0 +1,53 @@
+═══════════════════════════════════════════════════════════════════════════════
+EMAIL DRAFT – READY TO SEND
+═══════════════════════════════════════════════════════════════════════════════
+
+TO:      kajal.singh@viatris.com
+CC:      [Optional: Mr. Chirag Sen – if he has agreed]
+SUBJECT: Application for IT Support / IT Administrator – Navneet Vishwakarma 
+         (Referred by Mr. Chirag Sen)
+
+───────────────────────────────────────────────────────────────────────────────
+EMAIL BODY:
+───────────────────────────────────────────────────────────────────────────────
+
+Dear Ms. Kajal Singh,
+
+I hope this email finds you well.
+
+I am writing to express my strong interest in the IT Support / IT Administrator position 
+at Viatris, as referred by Mr. Chirag Sen. My name is Navneet Vishwakarma, and I am a 
+Linux System Administrator with 2+ years of hands-on experience in Linux Administration, 
+Technical Support, Infrastructure Operations, and System Troubleshooting.
+
+In my current role at Savayas Life and Balance Pvt. Ltd., I have:
+• Administered 15+ Linux servers (SLES 15, Ubuntu 22.04) with 99.5% uptime
+• Resolved 75+ P1/P2 operational incidents with average resolution under 2 hours
+• Automated routine tasks using Ansible and Bash, reducing manual effort by 40%
+• Implemented CIS/NIST-aligned security hardening across the server infrastructure
+• Provided L1/L2 technical support to 50+ end-users with 95% first-call resolution
+
+I am confident that my technical skills in Linux administration, automation, and 
+incident management make me a strong fit for this role at Viatris. I am eager to 
+contribute to your team's mission of delivering secure and reliable IT infrastructure.
+
+I have attached my resume and cover letter for your review. I would be grateful for 
+the opportunity to discuss my candidature further.
+
+Thank you for your time and consideration.
+
+Warm regards,
+
+Navneet Vishwakarma
++91-84350-61006
+rajvl132011@gmail.com
+LinkedIn: linkedin.com/in/navneet1206
+GitHub: github.com/navneetvishwakarma
+
+Referred by: Mr. Chirag Sen
+
+───────────────────────────────────────────────────────────────────────────────
+ATTACHMENTS:
+───────────────────────────────────────────────────────────────────────────────
+1. Navneet_Vishwakarma_Resume.pdf
+2. Navneet_Vishwakarma_Cover_Letter.pdf
